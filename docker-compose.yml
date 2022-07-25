@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  python:
+    image: python
+    build: 
+      context: .
+      dockerfile: .Dockerfile
+    volumes:
+      - ./:/root/projects
+    environment:
+      # `pipenv` will create an environment in the working directory
+      - PIPENV_VENV_IN_PROJECT=1
